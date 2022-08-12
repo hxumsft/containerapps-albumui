@@ -24,7 +24,7 @@ stages:
   displayName: Build and push stage
   jobs:
   - job: Build
-    displayName: Build
+    displayName: Build and push the UI app container
     pool:
       vmImage: $(vmImageName)
     steps:
@@ -38,7 +38,7 @@ stages:
         tags: |
           $(tag)
 - stage: Deploy
-  displayName: Deploy to Container App
+  displayName: Deploy UI app to Container App
   jobs:
   - job: Deploy
     displayName: Deploy to Container App using Azure CLI
